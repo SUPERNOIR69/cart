@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body class="bg-light">
+
+<div class="container py-4">
+    <div class="row" id="productContainer"></div>
+</div>
+
+<script>
+const product = [
+    {
+        id: 1,
+        name: "Apple Juice from The Mount Everest",
+        images:"https://th.bing.com/th/id/OIP.npB2OAfb4BZKFbyWCfTu4QHaE8?w=265&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3",
+        describe: "Highy healthy for people and gives good benefits for stamina and digestive system",
+        price : 9.99
+    },
+    {
+        id: 2,
+        name: "Banana Juice from The Mount Everest",
+        images:"https://www.onmanorama.com/content/dam/mm/en/food/recipe/images/2023/4/20/banana-juice.jpg",
+        describe: "Banana juice makes your digestive system easy to dismember and smooth.",
+        price : 10.99
+    },
+    {
+        id: 3,
+        name: "Sweet Matcha Latte that has alot of protein",
+        images:"https://th.bing.com/th/id/OIP.xtV4iWfRgD5uXSwxz-GrcAHaE8?w=244&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3",
+        describe: "Matcha Tea is a refreshing blend of matcha powder and creamy milk that will have",
+        price : 13.99
+    },
+    {
+        id: 4,
+        name: "Sweet Iced Coffee that has alot of energy",
+        images:"https://th.bing.com/th/id/R.c73528fdcf5f3074586e9f6eaf72dba4?rik=ITs1xgikOfXDZg&pid=ImgRaw&r=0",
+        describe: "Iced coffee is a well known drink for most countries in asia.",
+        price : 13.99
+    }
+];
+
+const container = document.getElementById("productContainer");
+
+product.forEach(item => {
+    container.innerHTML += `
+    
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="bg-light border rounded-3 shadow-lg h-100 p-2">
+
+            <div style="height:40%;">
+                <img class="rounded-2 w-100" style="height:180px; object-fit:cover;" src="${item.images}" alt="">
+            </div>
+
+            <div class="mt-2 fw-bold mt-5">
+                ${item.name}
+            </div>
+
+            <div style="font-size:10px;" class="text-secondary">
+                ${item.describe}
+            </div>
+
+            <div class="text-danger">
+                $${item.price}
+            </div>
+
+            <div class="btn bg-primary w-100 text-white fw-bold mt-2">
+                Add to Cart
+            </div>
+
+        </div>
+    </div>
+
+    `;
+});
+</script>
+
+</body>
+</html>
